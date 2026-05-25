@@ -1,0 +1,6 @@
+{
+  "name": "AI Presentation Generator",
+  "description": "An AI-powered web tool that turns raw information, notes, and unstructured text into modern, well-structured visual presentations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
