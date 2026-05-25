@@ -312,10 +312,9 @@ export default function App() {
             <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-600/10 text-white">
               <LucideIcon name="Layers" size={16} />
             </div>
-            <div className="h-4 w-px bg-gray-200" />
             <div>
               <span className="text-gray-950 font-display font-black tracking-tight text-sm">AI Presentation</span>
-              <span className="text-gray-400 font-mono text-[10px] block leading-none font-bold">powered by Gemini</span>
+              <span className="text-gray-400 font-mono text-[10px] block leading-none font-bold">powered by Sarrthak Chauhan</span>
             </div>
           </div>
 
