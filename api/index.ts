@@ -401,31 +401,10 @@ app.post('/api/image/generate', async (req, res) => {
   }
 });
 
-// ---------------------------------------------------------
-// VITE OR STATIC BUILD MIDDLEWARE
-// ---------------------------------------------------------
-async function startServer() {
-  if (process.env.NODE_ENV !== "production") {
-    // Dynamic import to avoid holding production dependencies
-    const vite = await createViteServer({
-      server: { middlewareMode: true },
-      appType: "spa",
-    });
-    app.use(vite.middlewares);
-    console.log("Mounted Vite development middleware.");
-  } else {
-    const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
-    // Support single-page routing: redirect all unmatched non-api requests to index.html
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(distPath, 'index.html'));
-    });
-    console.log("Serving static production files from dist.");
-  }
+// -------------------------------------------------------------
+// VERCEL SERVERLESS EXPORT
+// -------------------------------------------------------------
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Express custom server running on http://0.0.0.0:${PORT}`);
-  });
-}
-
-startServer();
+// We remove app.listen and the static file serving because Vercel 
+// handles routing and server management automatically.
+export default app;
